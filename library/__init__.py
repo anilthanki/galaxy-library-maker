@@ -169,7 +169,7 @@ class LibraryGalaxyLoader(object):
         for file_fs in self.lib.files:
             # iterate over files declared in the YAML lib
             galaxy_dataset_id, galaxy_library_folder_id, galaxy_missing_folders, galaxy_partial_folder_id = lgl.find_file(file_fs)
-
+            logging.info(f"{galaxy_dataset_id} and {create_if_missing}..")
             if not galaxy_dataset_id and create_if_missing:
                 logging.info(f"{file_fs} not present in the library, adding it..")
                 if not galaxy_library_folder_id:
